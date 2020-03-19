@@ -5,4 +5,4 @@ run apt-get update -qq \
     && apt-get dist-upgrade -qq \
     && apt-get install -qq \
     # Essentials:
-    wget curl clang git build-essential software-properties-common cmake automake
+    wget curl clang git build-essential software-properties-common cmake automake python3 python3-pip
