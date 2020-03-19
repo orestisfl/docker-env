@@ -3,6 +3,6 @@ services:
   - docker
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - cat base.Dockerfile > Dockerfile
+  - cat base.Dockerfile wasm.Dockerfile > Dockerfile
   - docker build . -t orestisfl/env:dev
   - docker push orestisfl/env:dev
