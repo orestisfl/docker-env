@@ -5,4 +5,16 @@ run apt-get update -qq \
     && apt-get dist-upgrade -qq \
     && apt-get install -qq \
     # Essentials:
-    wget curl clang git build-essential software-properties-common cmake automake python3 python3-pip
+        automake \
+        build-essential \
+        clang \
+        cmake \
+        curl \
+        git \
+        ipython3 \
+        python3 \
+        python3-pip \
+        software-properties-common \
+        tmux \
+        wget \
+    && pip3 install -U ipython pip
