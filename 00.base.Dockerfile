@@ -17,5 +17,4 @@ run apt-get update -qq \
         python3-pip \
         software-properties-common \
         tmux \
-        wget \
-    && pip3 install -U ipython pip
+        wget
