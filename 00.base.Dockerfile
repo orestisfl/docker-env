@@ -12,6 +12,7 @@ run apt-get update -qq \
         curl \
         git \
         ipython3 \
+        ninja-build \
         python3 \
         python3-pip \
         software-properties-common \
