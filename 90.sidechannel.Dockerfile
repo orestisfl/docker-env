@@ -14,14 +14,14 @@ run cd sidechannel \
     && make install \
     && cd ../texttrace/ \
     && make \
-    && make install PREFIX=/usr
+    && make install
 
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Daredevil \
     && apt-get install -qqy libomp-dev \
     && cd Daredevil \
     && make -j \
-    && make install PREFIX=/usr
+    && make install
 
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Deadpool \
