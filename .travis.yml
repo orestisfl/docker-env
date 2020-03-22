@@ -4,5 +4,5 @@ services:
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - cat *.Dockerfile > Dockerfile
-  - docker build . -t orestisfl/env:dev
-  - docker push orestisfl/env:dev
+  - docker build . -t orestisfl/env:latest
+  - docker push orestisfl/env:latest
