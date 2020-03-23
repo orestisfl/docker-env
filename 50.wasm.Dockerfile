@@ -34,3 +34,6 @@ run git clone --recursive https://github.com/WebAssembly/wabt \
     && mkdir build && cd build \
     && cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
     && make install -j
+
+# wasmtime: https://github.com/bytecodealliance/wasmtime
+run curl https://wasmtime.dev/install.sh -sSf | bash
