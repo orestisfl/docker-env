@@ -20,3 +20,10 @@ run git clone https://github.com/emscripten-core/emsdk.git \
     && ./emsdk install latest \
     && ./emsdk activate latest \
     && echo 'source /emsdk/emsdk_env.sh' >> ~/.profile
+
+# binaryen: https://github.com/WebAssembly/binaryen
+run git clone --depth 1 https://github.com/WebAssembly/binaryen \
+    && cd binaryen \
+    && mkdir build && cd build \
+    && cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr .. \
+    && ninja install
