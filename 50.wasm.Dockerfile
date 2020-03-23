@@ -27,3 +27,10 @@ run git clone --depth 1 https://github.com/WebAssembly/binaryen \
     && mkdir build && cd build \
     && cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr .. \
     && ninja install
+
+# wabt: https://github.com/WebAssembly/wabt
+run git clone --recursive https://github.com/WebAssembly/wabt \
+    && cd wabt \
+    && mkdir build && cd build \
+    && cmake -DCMAKE_INSTALL_PREFIX=/usr .. \
+    && make install -j
