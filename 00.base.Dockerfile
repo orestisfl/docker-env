@@ -4,7 +4,7 @@ shell ["/bin/bash", "-c"]
 env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
     && apt-get full-upgrade -qq \
-    && apt-get install -qq \
+    && apt-get install -y \
     # Essentials:
         automake \
         build-essential \

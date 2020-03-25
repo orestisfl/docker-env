@@ -1,7 +1,7 @@
 add valgrind-3.15.0.diff sidechannel/3.15.diff
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Tracer \
-    && apt-get install -qqy automake libcapstone-dev libsqlite3-dev \
+    && apt-get install -y automake libcapstone-dev libsqlite3-dev \
     && cd Tracer/TracerGrind \
     && wget https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2 \
     && tar xf valgrind-3.15.0.tar.bz2 \
@@ -18,11 +18,11 @@ run cd sidechannel \
 
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Daredevil \
-    && apt-get install -qqy libomp-dev \
+    && apt-get install -y libomp-dev \
     && cd Daredevil \
     && make -j \
     && make install
 
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Deadpool \
-    && apt install -qqy python python-pip
+    && apt install -y python python-pip

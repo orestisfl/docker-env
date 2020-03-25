@@ -1,4 +1,4 @@
-run apt install -qqy re2c \
+run apt install -y re2c \
     && git clone --depth 1 https://github.com/AliveToolkit/alive2 \
     && cd alive2 \
     && mkdir build && cd build \
