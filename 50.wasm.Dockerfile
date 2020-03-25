@@ -38,10 +38,5 @@ run git clone --recursive https://github.com/WebAssembly/wabt \
 # wasmtime: https://github.com/bytecodealliance/wasmtime
 run curl https://wasmtime.dev/install.sh -sSf | bash
 
-# Install latest node: https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
-run curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash \
-    && source ~/.nvm/nvm.sh \
-    && nvm install node \
-    && npm install npm@latest -g \
-    && npm update -g \
-    && npm install -g https://github.com/orestisfl/wasm-trace
+# wasm-trace: https://github.com/wasm3/wasm-trace
+run npm install -g https://github.com/orestisfl/wasm-trace
