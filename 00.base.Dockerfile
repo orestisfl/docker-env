@@ -3,7 +3,7 @@ from ubuntu:18.04
 shell ["/bin/bash", "-c"]
 env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
-    && apt-get dist-upgrade -qq \
+    && apt-get full-upgrade -qq \
     && apt-get install -qq \
     # Essentials:
         automake \
@@ -29,7 +29,7 @@ run apt-get update -qq \
     # https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
     && npm update -g \
     && npm install -g \
-        # https://github.com/sharkdp/fd
-        fd-find \
         # https://github.com/tldr-pages/tldr
-        tldr
+        tldr \
+    # https://github.com/sharkdp/fd
+    && wget https://github.com/sharkdp/fd/releases/download/v7.5.0/fd_7.5.0_amd64.deb && dpkg -i fd_7.5.0_amd64.deb && rm *.deb
