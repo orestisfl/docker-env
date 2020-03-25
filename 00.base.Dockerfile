@@ -1,4 +1,4 @@
-from ubuntu:18.04
+from orestisfl/llvm
 
 shell ["/bin/bash", "-c"]
 env DEBIAN_FRONTEND=noninteractive
