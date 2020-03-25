@@ -22,12 +22,13 @@ run apt-get update -qq \
         tmux \
         vim \
         wget \
-    # Install latest node: https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
-    && curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash \
-    && source ~/.nvm/nvm.sh \
-    && nvm install node \
+    # Install latest node: https://github.com/nodesource/distributions#debinstall
+    && curl -sL https://deb.nodesource.com/setup_13.x | bash \
+    && apt-get install -y nodejs \
     && npm install npm@latest -g \
+    # https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
     && npm update -g \
+    && npm install -g \
         # https://github.com/sharkdp/fd
         fd-find \
         # https://github.com/tldr-pages/tldr
