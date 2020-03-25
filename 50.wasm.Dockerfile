@@ -19,7 +19,7 @@ run git clone https://github.com/emscripten-core/emsdk.git \
     && cd emsdk \
     && ./emsdk install latest \
     && ./emsdk activate latest \
-    && echo 'source /emsdk/emsdk_env.sh' >> ~/.profile
+    && echo '# source /emsdk/emsdk_env.sh' >> ~/.profile
 
 # binaryen: https://github.com/WebAssembly/binaryen
 run git clone --depth 1 https://github.com/WebAssembly/binaryen \
