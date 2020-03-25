@@ -1,5 +1,6 @@
 from ubuntu:18.04
 
+shell ["/bin/bash", "-c"]
 env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
     && apt-get dist-upgrade -qq \
