@@ -43,4 +43,5 @@ run curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | ba
     && source ~/.nvm/nvm.sh \
     && nvm install node \
     && npm install npm@latest -g \
-    && npm update -g
+    && npm update -g \
+    && npm install -g https://github.com/orestisfl/wasm-trace
