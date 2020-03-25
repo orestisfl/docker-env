@@ -18,4 +18,5 @@ run apt-get update -qq \
         python3-pip \
         software-properties-common \
         tmux \
+        vim \
         wget
