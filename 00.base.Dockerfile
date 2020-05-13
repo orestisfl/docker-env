@@ -1,5 +1,3 @@
-from orestisfl/llvm
-
 shell ["/bin/bash", "-c"]
 env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \

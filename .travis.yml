@@ -1,8 +1,19 @@
-language: minimal
+language: python
 services:
   - docker
+jobs:
+    include:
+        - name: llvm from source
+          env:
+              - _DOCKER_IMAGE='orestisfl/env:latest'
+              - _FROM='orestisfl/llvm:latest'
+        - name: llvm from apt 10
+          env:
+              - _DOCKER_IMAGE='orestisfl/env:llvm-10'
+              - _FROM='orestisfl/llvm:10'
+              - _EXCLUDE='50.alive2.Dockerfile:90.sidechannel.Dockerfile'
 script:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - cat *.Dockerfile > Dockerfile
-  - docker build . -t orestisfl/env:latest
-  - docker push orestisfl/env:latest
+  - ./create_Dockerfile.py
+  - docker build . -t "$_DOCKER_IMAGE"
+  - docker push "$_DOCKER_IMAGE"
