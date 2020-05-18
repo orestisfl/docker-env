@@ -9,7 +9,7 @@ exclude = exclude.split(":") if exclude else []
 with open("Dockerfile", "w") as fout:
     print("from " + os.getenv("_FROM", "orestisfl/llvm"), file=fout)
 
-    for fname in glob("*.Dockerfile"):
+    for fname in sorted(glob("*.Dockerfile")):
         if fname in exclude:
             print(f"Excluding {fname}", file=sys.stderr)
             continue
