@@ -6,7 +6,7 @@ run mkdir sidechannel \
     && wget https://sourceware.org/pub/valgrind/valgrind-3.15.0.tar.bz2 \
     && tar xf valgrind-3.15.0.tar.bz2 \
     && cp -r tracergrind valgrind-3.15.0/ \
-    && patch -p0 < /sidechannel/3.15.diff \
+    && patch -p0 < valgrind-3.15.0.diff \
     && cd valgrind-3.15.0/ \
     && ./autogen.sh \
     && ./configure --prefix=/usr \
