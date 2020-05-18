@@ -18,7 +18,8 @@ run mkdir sidechannel \
 
 run cd sidechannel \
     && git clone --depth 1 https://github.com/SideChannelMarvels/Daredevil \
-    # && apt-get install -y libomp-dev \
+    # Install libomp if it can't be found
+    && echo '#include <omp.h>' | cpp -H -o /dev/null &>/dev/null || apt-get install -y libomp-dev \
     && cd Daredevil \
     && make -j \
     && make install
