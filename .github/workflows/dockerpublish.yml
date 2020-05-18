@@ -1,0 +1,39 @@
+name: Build and push all dockers
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * MON'
+
+jobs:
+  dockerbuild:
+    strategy:
+      matrix:
+        target: ['llvm:10', 'llvm:latest-10', 'llvm:latest']
+      fail-fast: false
+
+    env:
+      IMAGE_NAME: orestisfl/${{ matrix.target }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build llvm image
+        run: cd ${{ matrix.target }} && docker build -t "$IMAGE_NAME" .
+
+      - name: Log into registry
+        run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login --username orestisfl --password-stdin
+
+      - name: Push llvm image
+        run: docker push $IMAGE_NAME
+
+      - name: Build env image
+        run: ./build.py "$IMAGE_NAME"
+        working-directory: ./env
+
+      - name: Push env image
+        run: docker push $(docker images 'orestisfl/env' --format '{{.Repository}}:{{.Tag}}')
