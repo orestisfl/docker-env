@@ -4,7 +4,7 @@ from glob import glob
 from subprocess import run
 
 EXCLUDE = {
-    "10": ["50.alive2.Dockerfile", "90.sidechannel.Dockerfile"],
+    "10": ["50.alive2.Dockerfile",],
     "latest-10": [],
     "latest": [],
 }
