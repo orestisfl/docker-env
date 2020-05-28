@@ -1,4 +1,4 @@
-from ubuntu:latest
+from ubuntu:18.04
 
 env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
