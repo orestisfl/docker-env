@@ -6,7 +6,6 @@ run apt-get update -qq \
     # Essentials:
         automake \
         build-essential \
-        clang \
         cmake \
         curl \
         git \
