@@ -2,7 +2,7 @@
 add https://sh.rustup.rs rustup.sh
 env PATH=/root/.cargo/bin:$PATH
 run apt-get install -y curl ca-certificates cmake \
-    && curl -sS -L -O https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-10/wasi-sdk_10.0_amd64.deb \
+    && curl -sS -L -O https://github.com/WebAssembly/wasi-sdk/releases/download/wasi-sdk-11/wasi-sdk_11.0_amd64_ubuntu16.04.deb \
     && dpkg -i *.deb && rm -f *.deb \
     && chmod +x rustup.sh && ./rustup.sh -y \
     && git clone https://github.com/bytecodealliance/lucet \
