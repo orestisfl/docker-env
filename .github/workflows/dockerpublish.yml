@@ -1,0 +1,43 @@
+name: Build and push all dockers
+
+on:
+  push:
+    branches:
+      - verificatum
+
+jobs:
+  native:
+    strategy:
+      matrix:
+        arch: [native, arm]
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_BUILD_KIT: 1
+      DOCKER_CLI_EXPERIMENTAL: enabled
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build multi-arch docker
+        run: |
+            docker buildx create --name myarmbuilder
+            docker buildx use myarmbuilder
+            docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+            docker buildx build --platform linux/arm/v7 -t tmp . --load
+        if: matrix.arch == 'arm'
+
+      - name: Build native docker
+        run: docker build -t tmp .
+        if: matrix.arch == 'native'
+
+      - name: Verify uname
+        run: docker run tmp uname -a
+
+      - name: Run VCR tests
+        run: docker run tmp bash -c 'cd /verificatum-vmn-3.0.4-full/verificatum-vcr-3.0.4 && make check'
+
+      - name: Run VMN tests
+        run: docker run tmp bash -c 'cd /verificatum-vmn-3.0.4-full/verificatum-vmn-3.0.4 && xvfb-run make check'
+
+      - name: Run VMN demo
+        run: docker run tmp bash -c 'cd /verificatum-vmn-3.0.4-full/verificatum-vmn-3.0.4/demo/mixnet && xvfb-run bash -x ./demo'
