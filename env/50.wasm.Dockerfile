@@ -40,3 +40,9 @@ run curl https://wasmtime.dev/install.sh -sSf | bash
 
 # wasm-trace: https://github.com/wasm3/wasm-trace
 run npm install -g https://github.com/orestisfl/wasm-trace
+
+# swam: https://github.com/satabin/swam
+run apt-get install -y default-jdk \
+    && git clone https://github.com/satabin/swam \
+    && cd swam \
+    && ./millw all _.assembly
