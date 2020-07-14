@@ -20,7 +20,7 @@ run apt-get update -qq \
         vim \
         wget \
     # Install latest node: https://github.com/nodesource/distributions#debinstall
-    && curl -sL https://deb.nodesource.com/setup_13.x | bash \
+    && curl -sL https://deb.nodesource.com/setup_current.x | bash \
     && apt-get install -y nodejs \
     && npm install npm@latest -g \
     # https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
