@@ -11,7 +11,7 @@ jobs:
   dockerbuild:
     strategy:
       matrix:
-        target: ['llvm:10', 'llvm:latest-10', 'llvm:latest']
+        target: ['llvm:latest']
       fail-fast: false
 
     env:

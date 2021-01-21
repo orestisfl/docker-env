@@ -19,6 +19,7 @@ run apt-get update -qq \
         tmux \
         vim \
         wget \
+        z3 \
     # Install latest node: https://github.com/nodesource/distributions#debinstall
     && curl -sL https://deb.nodesource.com/setup_current.x | bash \
     && apt-get install -y nodejs \
