@@ -1,4 +1,4 @@
-run apt-get install -y re2c \
+run apt-get install -y re2c z3 libz3-dev \
     && git clone --depth 1 https://github.com/AliveToolkit/alive2 \
     && cd alive2 \
     && mkdir build && cd build \
