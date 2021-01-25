@@ -1,5 +1,4 @@
 shell ["/bin/bash", "-c"]
-env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
     && apt-get full-upgrade -qq \
     && apt-get install -y \
@@ -7,18 +6,15 @@ run apt-get update -qq \
         automake \
         build-essential \
         cmake \
-        curl \
         git \
         ipython3 \
         ninja-build \
         python3 \
         python3-pip \
         silversearcher-ag \
-        software-properties-common \
         tig \
         tmux \
         vim \
-        wget \
     # Install latest node: https://github.com/nodesource/distributions#debinstall
     && curl -sL https://deb.nodesource.com/setup_current.x | bash \
     && apt-get install -y nodejs \

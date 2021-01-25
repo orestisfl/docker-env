@@ -4,7 +4,20 @@ env DEBIAN_FRONTEND=noninteractive
 run apt-get update -qq \
     && apt-get full-upgrade -qq \
     && apt-get install -qq \
-    git build-essential cmake ninja-build python3
+        build-essential \
+        cmake \
+        curl \
+        git \
+        ninja-build \
+        python3 \
+        software-properties-common \
+        wget
+
+add https://apt.llvm.org/llvm.sh /tmp/llvm.sh
+run bash /tmp/llvm.sh 11
+env CC=clang
+env CXX=clang++
+env PATH=/usr/lib/llvm-11/bin:$PATH
 
 # Build LLVM as required by alive2
 add https://api.github.com/repos/llvm/llvm-project/git/refs/heads/master /tmp/version.json
