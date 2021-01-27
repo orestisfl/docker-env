@@ -1,3 +1,10 @@
+# Install latest node: https://github.com/nodesource/distributions#debinstall
+run curl -sL https://deb.nodesource.com/setup_current.x | bash \
+    && apt-get install -y nodejs \
+    && npm install npm@latest -g \
+    # https://docs.npmjs.com/updating-packages-downloaded-from-the-registry
+    && npm update -g
+
 # Lucet: https://bytecodealliance.github.io/lucet/Compiling-on-Linux.html
 add https://sh.rustup.rs rustup.sh
 env PATH=/root/.cargo/bin:$PATH
