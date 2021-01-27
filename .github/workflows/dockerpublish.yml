@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         target: ['llvm:latest']
-        optional: ['wasm', '']
+        optional: ['nlp', 'wasm', '']
       fail-fast: false
 
     env:
