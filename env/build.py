@@ -33,7 +33,8 @@ def main(args):
     if optional_used:
         our_tag += "-" + "-".join(sorted(optional_used))
     our_tag += ":" + from_image.split(":", 1)[1]
-    print(our_tag)
+    with open("image", "w") as f:
+        print(our_tag, file=f)
     return run(["docker", "build", "-t", our_tag, "."], check=True)
 
 
