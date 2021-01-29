@@ -22,7 +22,7 @@ env CXX=clang++
 env PATH=/usr/lib/llvm-11/bin:$PATH
 
 # Build LLVM as required by alive2
-add https://api.github.com/repos/llvm/llvm-project/git/refs/heads/master /tmp/version.json
+add https://api.github.com/repos/llvm/llvm-project/git/refs/heads/main /tmp/version.json
 run git clone --depth 1 https://github.com/llvm/llvm-project/ \
     && cd llvm-project \
     && mkdir build \
