@@ -10,4 +10,5 @@ run apt-get update -qq \
         silversearcher-ag \
         tig \
         tmux \
-        vim
+        vim \
+        zip
