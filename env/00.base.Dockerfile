@@ -7,6 +7,7 @@ run apt-get update -qq \
         fd-find \
         git \
         python3-pip \
+        redis-server \
         silversearcher-ag \
         tig \
         tmux \
